@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — Maxima Business Solutions Pune</title>
+  <meta name="description" content="Get in touch with Maxima Business Solutions. Book a free digital strategy consultation for your Pune business today." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <style>
+    /* Map placeholder */
+    .map-placeholder {
+      width: 100%;
+      height: 380px;
+      border-radius: var(--border-radius-lg);
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .map-placeholder::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          0deg,
+          rgba(108,99,255,0.03) 0px,
+          rgba(108,99,255,0.03) 1px,
+          transparent 1px,
+          transparent 60px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          rgba(108,99,255,0.03) 0px,
+          rgba(108,99,255,0.03) 1px,
+          transparent 1px,
+          transparent 60px
+        );
+    }
+
+    .map-pin {
+      width: 48px;
+      height: 48px;
+      background: var(--gradient-1);
+      border-radius: 50% 50% 50% 0;
+      transform: rotate(-45deg);
+      position: relative;
+      box-shadow: 0 8px 24px rgba(108,99,255,0.4);
+      animation: bounce-pin 2s ease-in-out infinite;
+    }
+
+    .map-pin::after {
+      content: '';
+      width: 18px;
+      height: 18px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+
+    @keyframes bounce-pin {
+      0%, 100% { transform: rotate(-45deg) translateY(0); }
+      50% { transform: rotate(-45deg) translateY(-10px); }
+    }
+
+    /* FAQ section */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 60px;
+    }
+
+    .faq-item {
+      border-radius: var(--border-radius);
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .faq-item.open {
+      border-color: rgba(108,99,255,0.3);
+    }
+
+    .faq-question {
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: none;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-primary);
+      gap: 20px;
+    }
+
+    .faq-icon {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(108,99,255,0.1);
+      border: 1px solid rgba(108,99,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      transition: var(--transition);
+    }
+
+    .faq-item.open .faq-icon {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 200px;
+    }
+
+    .faq-answer-inner {
+      padding: 0 28px 24px;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+    }
+
+    /* Quick contact chips */
+    .quick-chips {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .quick-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border-radius: 50px;
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: var(--transition);
+      text-decoration: none;
+      color: var(--text-primary);
+    }
+
+    .quick-chip:hover {
+      border-color: rgba(108,99,255,0.4);
+      background: rgba(108,99,255,0.08);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">⚡</div>
+        <span>Maxima<span class="gradient-text">.</span></span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="breadcrumb reveal">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Contact</span>
+      </div>
+      <span class="section-tag reveal" style="margin:0 auto 24px;display:table;">Get in Touch</span>
+      <h1 class="reveal" style="margin-bottom:20px;">
+        Let's Build Something <br><span class="gradient-text">Amazing Together</span>
+      </h1>
+      <p class="reveal" style="max-width:580px;margin:0 auto;font-size:1.1rem;">
+        Ready to transform your digital presence? Drop us a message and we'll get back to you within 2 hours — guaranteed.
+      </p>
+
+      <div class="quick-chips reveal" style="justify-content:center;">
+        <a href="tel:+919876543210" class="quick-chip">📞 +91 98765 43210</a>
+        <a href="mailto:hello@maximabusiness.in" class="quick-chip">✉️ hello@maximabusiness.in</a>
+        <a href="https://wa.me/919876543210" class="quick-chip">💬 WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT FORM + INFO ===== -->
+  <section class="section" style="padding-top:60px;">
+    <div class="container">
+      <div class="contact-wrap">
+        <!-- Contact Info -->
+        <div>
+          <div class="reveal">
+            <span class="section-tag">Contact Info</span>
+            <h2 style="margin:20px 0 16px;">We'd Love to <span class="gradient-text">Hear from You</span></h2>
+            <p style="margin-bottom:36px;">Whether you have a project in mind, want to explore partnership opportunities, or just want to say hello — our team is always ready to chat.</p>
+          </div>
+
+          <div class="contact-info-cards stagger">
+            <div class="contact-card">
+              <div class="contact-card-icon" style="background:rgba(108,99,255,0.15);">📍</div>
+              <div>
+                <div style="font-weight:600;margin-bottom:4px;">Our Office</div>
+                <div style="font-size:0.9rem;color:var(--text-secondary);">
+                  3rd Floor, Insignia Tower,<br>
+                  Lane 5, Koregaon Park,<br>
+                  Pune, Maharashtra 411001
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-card-icon" style="background:rgba(0,212,255,0.15);">📞</div>
+              <div>
+                <div style="font-weight:600;margin-bottom:4px;">Phone</div>
+                <div style="font-size:0.9rem;color:var(--text-secondary);">
+                  <a href="tel:+919876543210" style="color:var(--text-secondary);">+91 98765 43210</a><br>
+                  <span style="font-size:0.8rem;color:var(--text-muted);">Mon–Sat, 9:30AM–7:00PM IST</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-card-icon" style="background:rgba(255,107,107,0.15);">✉️</div>
+              <div>
+                <div style="font-weight:600;margin-bottom:4px;">Email</div>
+                <div style="font-size:0.9rem;color:var(--text-secondary);">
+                  <a href="mailto:hello@maximabusiness.in" style="color:var(--primary-light);">hello@maximabusiness.in</a><br>
+                  <span style="font-size:0.8rem;color:var(--text-muted);">We reply within 2 hours</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-card">
+              <div class="contact-card-icon" style="background:rgba(255,217,61,0.15);">💬</div>
+              <div>
+                <div style="font-weight:600;margin-bottom:4px;">WhatsApp</div>
+                <div style="font-size:0.9rem;color:var(--text-secondary);">
+                  <a href="https://wa.me/919876543210" style="color:var(--primary-light);">Chat on WhatsApp</a><br>
+                  <span style="font-size:0.8rem;color:var(--text-muted);">Usually replies in minutes</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Social Links -->
+          <div class="reveal" style="margin-top:36px;">
+            <div style="font-weight:600;margin-bottom:16px;font-size:0.9rem;color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.08em;">Follow Us</div>
+            <div style="display:flex;gap:12px;">
+              <a href="#" class="social-link" style="width:44px;height:44px;font-size:1rem;" aria-label="Instagram">📸</a>
+              <a href="#" class="social-link" style="width:44px;height:44px;font-size:1rem;" aria-label="LinkedIn">💼</a>
+              <a href="#" class="social-link" style="width:44px;height:44px;font-size:1rem;" aria-label="Twitter">🐦</a>
+              <a href="#" class="social-link" style="width:44px;height:44px;font-size:1rem;" aria-label="YouTube">▶️</a>
+              <a href="#" class="social-link" style="width:44px;height:44px;font-size:1rem;" aria-label="Facebook">📘</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="contact-form-wrap reveal-right">
+          <div style="margin-bottom:32px;">
+            <h3 style="font-size:1.5rem;margin-bottom:8px;">Send Us a Message</h3>
+            <p style="font-size:0.9rem;">Fill in the details below and we'll get back to you within 2 hours.</p>
+          </div>
+
+          <form class="contact-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" placeholder="Arjun" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Mehta" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="arjun@company.in" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="company">Company Name</label>
+              <input type="text" id="company" name="company" placeholder="Your Business Name" />
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service You're Interested In</label>
+              <select id="service" name="service">
+                <option value="">Select a service...</option>
+                <option>Web Design & Development</option>
+                <option>SEO & Content Marketing</option>
+                <option>Performance Marketing (Google/Meta Ads)</option>
+                <option>Social Media Marketing</option>
+                <option>Brand Identity & Design</option>
+                <option>E-Commerce Solution</option>
+                <option>Full Digital Marketing Package</option>
+                <option>Other / Not Sure Yet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="budget">Approximate Monthly Budget</label>
+              <select id="budget" name="budget">
+                <option value="">Select a budget range...</option>
+                <option>Under ₹10,000/month</option>
+                <option>₹10,000 – ₹25,000/month</option>
+                <option>₹25,000 – ₹50,000/month</option>
+                <option>₹50,000 – ₹1,00,000/month</option>
+                <option>₹1,00,000+/month</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell Us About Your Project *</label>
+              <textarea id="message" name="message" placeholder="Describe your business, current challenges, and what you're looking to achieve with digital marketing..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;padding:18px 32px;font-size:1rem;">
+              <span>Send Message</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+            </button>
+
+            <p style="text-align:center;font-size:0.8rem;color:var(--text-muted);margin-top:16px;">
+              🔒 Your information is secure and will never be shared with third parties.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MAP ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="reveal">
+        <div class="map-placeholder">
+          <div class="map-pin"></div>
+          <div style="text-align:center;position:relative;z-index:1;">
+            <div style="font-weight:600;margin-bottom:4px;">Maxima Business Solutions</div>
+            <div style="font-size:0.85rem;color:var(--text-muted);">Koregaon Park, Pune, Maharashtra 411001</div>
+            <a href="https://maps.google.com/?q=Koregaon+Park+Pune" class="btn btn-outline" style="margin-top:20px;font-size:0.85rem;padding:10px 20px;">
+              Open in Google Maps →
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section" style="background:rgba(13,13,31,0.5);">
+    <div class="container" style="max-width:800px;">
+      <div class="reveal" style="text-align:center;">
+        <span class="section-tag">FAQ</span>
+      </div>
+      <h2 class="reveal" style="text-align:center;margin:16px 0 0;">
+        Frequently Asked <span class="gradient-text">Questions</span>
+      </h2>
+
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            How long does it take to build a website?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              A standard business website typically takes 3–4 weeks from kickoff to launch. Larger projects with custom features or e-commerce functionality may take 6–8 weeks. We'll give you a precise timeline during our initial consultation based on your specific requirements.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            How soon will I see SEO results?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              SEO is a long-term investment. Most clients start seeing meaningful improvements in rankings and traffic within 3–6 months. For highly competitive industries, it may take 6–12 months to reach top positions. We set realistic expectations from day one and show you month-over-month progress.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            Do you work with businesses outside Pune?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Absolutely! While we're based in Pune and have deep local expertise, we work with businesses across India. Our digital services — web design, SEO, and digital marketing — are location-independent, and we use video calls and project management tools to collaborate seamlessly.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            What makes Maxima different from other agencies?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Three things: transparency, results, and partnership. We give you real-time access to your campaign data, we're obsessed with measurable outcomes (not just vanity metrics), and we operate as an extension of your team — not a vendor you never hear from. Plus, our local Pune expertise gives you an edge in the regional market.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            Is there a minimum contract period?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              For project-based work (websites, branding), there's no ongoing contract. For digital marketing services (SEO, ads, social media), we recommend a minimum 3-month engagement to show meaningful results — but we never lock you into long-term contracts you're not happy with.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-question">
+            Do you offer free consultations?
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <div class="faq-answer-inner">
+              Yes! We offer a completely free, no-obligation 30-minute digital strategy consultation for all new clients. In this call, we'll analyse your current digital presence, identify opportunities, and suggest a tailored approach. Book yours using the form above.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="cta-section">
+    <div class="cta-glow"></div>
+    <div class="cta-content reveal">
+      <span class="section-tag" style="margin:0 auto 24px;display:table;">Don't Wait</span>
+      <h2>Your Competition Isn't <span class="gradient-text">Standing Still</span></h2>
+      <p>Every day without a strong digital presence is a day your competitors are pulling ahead. Let's change that — starting today.</p>
+      <div class="cta-actions">
+        <a href="tel:+919876543210" class="btn btn-primary">
+          📞 Call Now: +91 98765 43210
+        </a>
+        <a href="https://wa.me/919876543210" class="btn btn-outline">
+          💬 WhatsApp Us
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon">⚡</div>
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;">Maxima<span class="gradient-text">.</span></span>
+          </a>
+          <p>Pune's leading web design and digital marketing agency — turning brands into market leaders since 2016.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link">📸</a>
+            <a href="#" class="social-link">💼</a>
+            <a href="#" class="social-link">🐦</a>
+            <a href="#" class="social-link">▶️</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Web Design</a></li>
+            <li><a href="services.html">SEO & Content</a></li>
+            <li><a href="services.html">Performance Marketing</a></li>
+            <li><a href="services.html">Social Media</a></li>
+            <li><a href="services.html">E-Commerce</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@maximabusiness.in">hello@maximabusiness.in</a></li>
+            <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li style="color:var(--text-secondary);font-size:0.9rem;">Koregaon Park, Pune 411001</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Maxima Business Solutions. All rights reserved.</p>
+        <ul class="footer-bottom-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        const isOpen = item.classList.contains('open');
+        // Close all
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        // Open clicked if it wasn't open
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Maxima Business Solutions Pune</title>
+  <meta name="description" content="Meet the passionate team at Maxima Business Solutions — Pune's top digital marketing and web design agency. Our story, values, and mission." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <style>
+    /* Timeline */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 60px auto 0;
+      padding: 0 24px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, var(--primary), var(--secondary), transparent);
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 48px;
+    }
+
+    .timeline-content {
+      padding: 24px;
+      border-radius: var(--border-radius);
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      transition: var(--transition);
+    }
+
+    .timeline-content:hover {
+      border-color: rgba(108,99,255,0.3);
+      transform: scale(1.02);
+    }
+
+    .timeline-item:nth-child(even) .timeline-content:first-child {
+      grid-column: 3;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content:last-child {
+      visibility: hidden;
+    }
+
+    .timeline-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--primary);
+      box-shadow: 0 0 20px rgba(108,99,255,0.5);
+      flex-shrink: 0;
+    }
+
+    .timeline-year {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary-light);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .timeline-content h3 {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
+    }
+
+    .timeline-content p {
+      font-size: 0.85rem;
+    }
+
+    /* Awards */
+    .awards-grid {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 20px;
+      margin-top: 60px;
+    }
+
+    .award-card {
+      padding: 28px 24px;
+      border-radius: var(--border-radius);
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .award-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(108,99,255,0.3);
+    }
+
+    .award-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .award-title { font-size: 0.9rem; font-weight: 600; margin-bottom: 4px; }
+    .award-year { font-size: 0.75rem; color: var(--text-muted); }
+
+    /* Partner logos */
+    .partners-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      margin-top: 48px;
+      opacity: 0.6;
+    }
+
+    .partner-logo {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    @media (max-width: 768px) {
+      .timeline::before { left: 24px; }
+      .timeline-item { grid-template-columns: auto 1fr; }
+      .timeline-item:nth-child(odd) .timeline-content:last-child { display: none; }
+      .timeline-item:nth-child(even) .timeline-content:first-child { grid-column: auto; }
+      .awards-grid { grid-template-columns: repeat(2,1fr); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">⚡</div>
+        <span>Maxima<span class="gradient-text">.</span></span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="breadcrumb reveal">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>About</span>
+      </div>
+      <span class="section-tag reveal" style="margin:0 auto 24px;display:table;">Our Story</span>
+      <h1 class="reveal" style="margin-bottom:20px;">
+        We're Not Just an Agency — <br><span class="gradient-text">We're Your Growth Partner</span>
+      </h1>
+      <p class="reveal" style="max-width:600px;margin:0 auto;font-size:1.1rem;">
+        Founded in Pune in 2016, Maxima Business Solutions has been on a single mission: to give every business access to world-class digital marketing and design.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT INTRO ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="about-intro">
+        <div class="about-visual reveal-left">
+          <div class="about-img-wrap">🚀</div>
+          <div class="about-badge">
+            <div class="num">8+</div>
+            <div style="font-size:0.85rem;color:var(--text-secondary);">Years of Growth</div>
+          </div>
+        </div>
+
+        <div class="reveal-right">
+          <span class="section-tag">Who We Are</span>
+          <h2 style="margin:20px 0 20px;">The Team Behind <span class="gradient-text">Your Success</span></h2>
+          <p style="margin-bottom:20px;">
+            Maxima Business Solutions was born out of a simple frustration: small and medium businesses in Pune were being ignored by big agencies chasing enterprise clients. We set out to change that.
+          </p>
+          <p style="margin-bottom:20px;">
+            Today, we're a team of 25+ passionate designers, developers, strategists, and marketers who live and breathe digital growth. We've helped 150+ Pune businesses across industries transform their online presence — and the results speak for themselves.
+          </p>
+          <p style="margin-bottom:36px;">
+            Our philosophy is simple: your success is our success. We don't just deliver projects; we build long-term partnerships focused on measurable business outcomes.
+          </p>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <a href="contact.html" class="btn btn-primary">Work With Us</a>
+            <a href="portfolio.html" class="btn btn-outline">See Our Work</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VALUES ===== -->
+  <section class="section" style="background:rgba(13,13,31,0.5);">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <span class="section-tag">Our DNA</span>
+      </div>
+      <h2 class="reveal" style="text-align:center;margin:16px 0 0;">
+        Values That Guide <span class="gradient-text">Everything We Do</span>
+      </h2>
+
+      <div class="values-grid stagger" style="margin-top:60px;">
+        <div class="value-card">
+          <div class="value-icon">🎯</div>
+          <h3 style="margin-bottom:12px;">Results First</h3>
+          <p>We measure success in revenue, leads, and rankings — not just deliverables. Every decision is made with your business outcomes in mind.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🔍</div>
+          <h3 style="margin-bottom:12px;">Radical Transparency</h3>
+          <p>No smoke and mirrors. You get full visibility into what we're doing, why we're doing it, and exactly what results you're getting.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">⚡</div>
+          <h3 style="margin-bottom:12px;">Speed & Agility</h3>
+          <p>The digital landscape moves fast. We move faster. Our lean team structure means decisions happen in days, not weeks.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🤝</div>
+          <h3 style="margin-bottom:12px;">Long-Term Partnership</h3>
+          <p>We're not just vendors — we're your in-house digital team. We invest in understanding your business deeply and growing with you.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🔬</div>
+          <h3 style="margin-bottom:12px;">Data-Driven Decisions</h3>
+          <p>Every strategy, every creative, every campaign is backed by data. We test, learn, and iterate relentlessly to maximise your ROI.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🌟</div>
+          <h3 style="margin-bottom:12px;">Creative Excellence</h3>
+          <p>We never settle for "good enough." Our creative team pushes boundaries to produce work that genuinely stands out in crowded markets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEAM ===== -->
+  <section class="section" id="team">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <span class="section-tag">The Team</span>
+      </div>
+      <h2 class="reveal" style="text-align:center;margin:16px 0 0;">
+        Meet the People Who <span class="gradient-text">Make It Happen</span>
+      </h2>
+
+      <div class="team-grid stagger">
+        <div class="team-card">
+          <div class="team-avatar" style="background:linear-gradient(135deg,rgba(108,99,255,0.2),rgba(0,212,255,0.1));">👨‍💼</div>
+          <div class="team-info">
+            <h3>Arjun Mehta</h3>
+            <div class="role">Founder & CEO</div>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;">Pune's digital pioneer with 10+ years in growth marketing.</p>
+            <div class="team-socials">
+              <a href="#" class="social-link">💼</a>
+              <a href="#" class="social-link">🐦</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar" style="background:linear-gradient(135deg,rgba(255,107,107,0.2),rgba(255,217,61,0.1));">👩‍🎨</div>
+          <div class="team-info">
+            <h3>Sneha Patil</h3>
+            <div class="role">Creative Director</div>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;">Award-winning designer who turns brands into icons.</p>
+            <div class="team-socials">
+              <a href="#" class="social-link">💼</a>
+              <a href="#" class="social-link">📸</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar" style="background:linear-gradient(135deg,rgba(0,212,255,0.2),rgba(108,99,255,0.1));">👨‍💻</div>
+          <div class="team-info">
+            <h3>Rohit Kulkarni</h3>
+            <div class="role">Head of Technology</div>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;">Full-stack wizard building seamless digital experiences.</p>
+            <div class="team-socials">
+              <a href="#" class="social-link">💼</a>
+              <a href="#" class="social-link">🐙</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <div class="team-avatar" style="background:linear-gradient(135deg,rgba(16,185,129,0.2),rgba(0,212,255,0.1));">👩‍💻</div>
+          <div class="team-info">
+            <h3>Priya Sharma</h3>
+            <div class="role">Head of Digital Marketing</div>
+            <p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:16px;">SEO & PPC specialist with ₹10Cr+ managed ad spend.</p>
+            <div class="team-socials">
+              <a href="#" class="social-link">💼</a>
+              <a href="#" class="social-link">🐦</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal" style="text-align:center;margin-top:48px;padding:40px;background:var(--bg-glass);border:1px solid var(--border-glass);border-radius:var(--border-radius-lg);">
+        <div style="font-size:2rem;margin-bottom:16px;">👥</div>
+        <h3 style="margin-bottom:12px;">+20 More Talented Specialists</h3>
+        <p style="max-width:500px;margin:0 auto 24px;">Our full team includes SEO writers, social media managers, graphic designers, developers, and account managers — all ready to grow your business.</p>
+        <a href="contact.html" class="btn btn-outline">Join Our Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TIMELINE ===== -->
+  <section class="section" style="background:rgba(13,13,31,0.5);">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <span class="section-tag">Our Journey</span>
+      </div>
+      <h2 class="reveal" style="text-align:center;margin:16px 0 0;">
+        8 Years of <span class="gradient-text">Growth & Evolution</span>
+      </h2>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-content">
+            <div class="timeline-year">2016</div>
+            <h3>Founded in Pune 🎉</h3>
+            <p>Arjun Mehta launches Maxima with a team of 3 and a mission to democratise digital marketing for Pune businesses.</p>
+          </div>
+          <div class="timeline-dot"></div>
+          <div></div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div></div>
+          <div class="timeline-dot" style="background:var(--secondary);box-shadow:0 0 20px rgba(0,212,255,0.5);"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2018</div>
+            <h3>First 50 Clients 🚀</h3>
+            <p>Reached our first major milestone with 50 active clients and expanded the team to 10 specialists.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-content">
+            <div class="timeline-year">2020</div>
+            <h3>Going Digital-First 💡</h3>
+            <p>During the pandemic, helped 30+ Pune businesses rapidly shift online — our biggest impact year yet.</p>
+          </div>
+          <div class="timeline-dot"></div>
+          <div></div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div></div>
+          <div class="timeline-dot" style="background:var(--accent);box-shadow:0 0 20px rgba(255,107,107,0.5);"></div>
+          <div class="timeline-content">
+            <div class="timeline-year">2022</div>
+            <h3>Award-Winning Agency 🏆</h3>
+            <p>Won "Best Digital Agency in Pune" and expanded services to include video production and influencer marketing.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-content">
+            <div class="timeline-year">2025</div>
+            <h3>200+ Projects & Counting 🌟</h3>
+            <p>Team of 25+, 150+ active clients, and a track record of delivering measurable growth across every industry.</p>
+          </div>
+          <div class="timeline-dot" style="background:var(--accent2);box-shadow:0 0 20px rgba(255,217,61,0.5);"></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AWARDS ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <span class="section-tag">Recognition</span>
+      </div>
+      <h2 class="reveal" style="text-align:center;margin:16px 0 0;">
+        Awards & <span class="gradient-text">Certifications</span>
+      </h2>
+
+      <div class="awards-grid stagger">
+        <div class="award-card">
+          <div class="award-icon">🏆</div>
+          <div class="award-title">Best Digital Agency</div>
+          <div class="award-year">Pune Business Awards 2022 & 2024</div>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">🎖️</div>
+          <div class="award-title">Google Partner</div>
+          <div class="award-year">Premier Google Partner Status</div>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">⭐</div>
+          <div class="award-title">Top Rated Agency</div>
+          <div class="award-year">Clutch.co — 4.9/5 Rating</div>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">🌟</div>
+          <div class="award-title">Meta Business Partner</div>
+          <div class="award-year">Certified Meta Ads Specialist</div>
+        </div>
+      </div>
+
+      <div class="reveal" style="margin-top:60px;text-align:center;">
+        <p style="font-size:0.9rem;margin-bottom:24px;color:var(--text-muted);">Trusted by leading Pune businesses across industries</p>
+        <div class="partners-row">
+          <span class="partner-logo">🏗️ BuildRight</span>
+          <span class="partner-logo">🌿 GreenLeaf</span>
+          <span class="partner-logo">💼 FinEdge</span>
+          <span class="partner-logo">☕ Brew & Bean</span>
+          <span class="partner-logo">🏥 MedCare</span>
+          <span class="partner-logo">👗 Zara Couture</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="cta-glow"></div>
+    <div class="cta-content reveal">
+      <span class="section-tag" style="margin:0 auto 24px;display:table;">Let's Connect</span>
+      <h2>Ready to Write <span class="gradient-text">Your Success Story?</span></h2>
+      <p>Join 150+ Pune businesses that have chosen Maxima as their long-term digital growth partner.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary">
+          Start a Conversation
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="services.html" class="btn btn-outline">Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon">⚡</div>
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;">Maxima<span class="gradient-text">.</span></span>
+          </a>
+          <p>Pune's leading web design and digital marketing agency — turning brands into market leaders since 2016.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link">📸</a>
+            <a href="#" class="social-link">💼</a>
+            <a href="#" class="social-link">🐦</a>
+            <a href="#" class="social-link">▶️</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Web Design</a></li>
+            <li><a href="services.html">SEO & Content</a></li>
+            <li><a href="services.html">Performance Marketing</a></li>
+            <li><a href="services.html">Social Media</a></li>
+            <li><a href="services.html">E-Commerce</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="about.html#team">Our Team</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@maximabusiness.in">hello@maximabusiness.in</a></li>
+            <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li style="color:var(--text-secondary);font-size:0.9rem;">Koregaon Park, Pune 411001</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Maxima Business Solutions. All rights reserved.</p>
+        <ul class="footer-bottom-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

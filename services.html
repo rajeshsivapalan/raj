@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services — Maxima Business Solutions Pune</title>
+  <meta name="description" content="Explore Maxima's full range of digital services — web design, SEO, performance marketing, social media, brand identity, and e-commerce solutions in Pune." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>" />
+  <style>
+    /* Services page extras */
+    .service-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      padding: 80px 0;
+      border-bottom: 1px solid var(--border-glass);
+    }
+    .service-detail:last-child { border-bottom: none; }
+    .service-detail.reverse { direction: rtl; }
+    .service-detail.reverse > * { direction: ltr; }
+
+    .service-detail-visual {
+      border-radius: var(--border-radius-lg);
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      padding: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 6rem;
+      min-height: 320px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-detail-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(108,99,255,0.15), transparent 70%);
+    }
+
+    .service-feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 24px 0 32px;
+    }
+
+    .service-feature-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .check-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: rgba(108,99,255,0.15);
+      color: var(--primary-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .tools-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .tool-badge {
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      background: rgba(0,212,255,0.08);
+      border: 1px solid rgba(0,212,255,0.2);
+      color: #00D4FF;
+    }
+
+    @media (max-width: 768px) {
+      .service-detail {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 60px 0;
+      }
+      .service-detail.reverse { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar scrolled">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">⚡</div>
+        <span>Maxima<span class="gradient-text">.</span></span>
+      </a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="nav-cta">Get Started</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== PAGE HERO ===== -->
+  <section class="page-hero">
+    <div class="page-hero-bg"></div>
+    <div class="container" style="position:relative;z-index:1;">
+      <div class="breadcrumb reveal">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Services</span>
+      </div>
+      <span class="section-tag reveal" style="margin:0 auto 24px;display:table;">Our Services</span>
+      <h1 class="reveal" style="margin-bottom:20px;">
+        Digital Solutions That <br><span class="gradient-text">Actually Work</span>
+      </h1>
+      <p class="reveal" style="max-width:600px;margin:0 auto;font-size:1.1rem;">
+        We combine creative design, technical expertise, and data-driven marketing to build digital assets that grow your business — not just look good.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== SERVICE OVERVIEW CARDS ===== -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="services-grid stagger">
+        <div class="service-card s1">
+          <div class="service-icon">🎨</div>
+          <h3>Web Design & Dev</h3>
+          <p>Pixel-perfect, fast-loading websites engineered to convert visitors into customers.</p>
+          <div class="service-tags">
+            <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">WordPress</span>
+          </div>
+        </div>
+        <div class="service-card s2">
+          <div class="service-icon">📊</div>
+          <h3>SEO & Content</h3>
+          <p>Dominate search rankings with proven on-page, off-page, and technical SEO.</p>
+          <div class="service-tags">
+            <span class="tag">Technical SEO</span><span class="tag">Blogging</span><span class="tag">Link Building</span>
+          </div>
+        </div>
+        <div class="service-card s3">
+          <div class="service-icon">🎯</div>
+          <h3>Paid Advertising</h3>
+          <p>ROI-obsessed Google & Meta campaigns that turn ad spend into revenue.</p>
+          <div class="service-tags">
+            <span class="tag">Google Ads</span><span class="tag">Meta Ads</span><span class="tag">Retargeting</span>
+          </div>
+        </div>
+        <div class="service-card s4">
+          <div class="service-icon">📱</div>
+          <h3>Social Media</h3>
+          <p>Grow your following and build brand loyalty across all social platforms.</p>
+          <div class="service-tags">
+            <span class="tag">Instagram</span><span class="tag">LinkedIn</span><span class="tag">YouTube</span>
+          </div>
+        </div>
+        <div class="service-card s5">
+          <div class="service-icon">✨</div>
+          <h3>Brand Identity</h3>
+          <p>A brand that stands out, tells your story, and builds instant trust.</p>
+          <div class="service-tags">
+            <span class="tag">Logo</span><span class="tag">Brand Guide</span><span class="tag">UI/UX</span>
+          </div>
+        </div>
+        <div class="service-card s6">
+          <div class="service-icon">🛒</div>
+          <h3>E-Commerce</h3>
+          <p>Full-featured online stores with seamless UX that maximise conversions.</p>
+          <div class="service-tags">
+            <span class="tag">Shopify</span><span class="tag">WooCommerce</span><span class="tag">Custom</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICE DETAILS ===== -->
+  <section class="section" style="background:rgba(13,13,31,0.4);">
+    <div class="container">
+      <div class="reveal" style="text-align:center;margin-bottom:80px;">
+        <span class="section-tag">Deep Dive</span>
+        <h2 style="margin-top:20px;">Everything You Need to <span class="gradient-text">Dominate Online</span></h2>
+      </div>
+
+      <!-- Web Design -->
+      <div class="service-detail">
+        <div class="reveal-left">
+          <span class="section-tag">01 — Web Design</span>
+          <h2 style="margin:20px 0 16px;">Websites That <span class="gradient-text">Convert</span></h2>
+          <p>Your website is your most powerful sales tool. We design and build bespoke digital experiences that are fast, accessible, and optimised for conversions — not just aesthetically pleasing.</p>
+          <ul class="service-feature-list">
+            <li><span class="check-icon">✓</span>Custom UI/UX design with wireframing and prototyping</li>
+            <li><span class="check-icon">✓</span>Mobile-first, responsive development</li>
+            <li><span class="check-icon">✓</span>Page speed optimisation (Core Web Vitals)</li>
+            <li><span class="check-icon">✓</span>CMS integration (WordPress, Webflow, custom)</li>
+            <li><span class="check-icon">✓</span>Ongoing maintenance and support</li>
+          </ul>
+          <div class="tools-grid">
+            <span class="tool-badge">Figma</span>
+            <span class="tool-badge">React</span>
+            <span class="tool-badge">Next.js</span>
+            <span class="tool-badge">WordPress</span>
+            <span class="tool-badge">Webflow</span>
+          </div>
+          <div style="margin-top:32px;">
+            <a href="contact.html" class="btn btn-primary">Start Your Website</a>
+          </div>
+        </div>
+        <div class="service-detail-visual reveal-right">🎨</div>
+      </div>
+
+      <!-- SEO -->
+      <div class="service-detail reverse">
+        <div class="reveal-right">
+          <span class="section-tag">02 — SEO & Content</span>
+          <h2 style="margin:20px 0 16px;">Rank #1 on <span class="gradient-text">Google</span></h2>
+          <p>We take a holistic approach to SEO — combining technical excellence, authoritative content, and strategic link building to sustainably grow your organic traffic and leads.</p>
+          <ul class="service-feature-list">
+            <li><span class="check-icon">✓</span>Comprehensive SEO audit and competitor analysis</li>
+            <li><span class="check-icon">✓</span>Technical SEO — site speed, schema, Core Web Vitals</li>
+            <li><span class="check-icon">✓</span>Keyword research and content strategy</li>
+            <li><span class="check-icon">✓</span>High-authority link building</li>
+            <li><span class="check-icon">✓</span>Monthly reporting with transparent KPIs</li>
+          </ul>
+          <div class="tools-grid">
+            <span class="tool-badge">Ahrefs</span>
+            <span class="tool-badge">SEMrush</span>
+            <span class="tool-badge">Google Search Console</span>
+            <span class="tool-badge">Surfer SEO</span>
+          </div>
+          <div style="margin-top:32px;">
+            <a href="contact.html" class="btn btn-primary">Boost My Rankings</a>
+          </div>
+        </div>
+        <div class="service-detail-visual reveal-left">📊</div>
+      </div>
+
+      <!-- Performance Marketing -->
+      <div class="service-detail">
+        <div class="reveal-left">
+          <span class="section-tag">03 — Performance Marketing</span>
+          <h2 style="margin:20px 0 16px;">Ads That <span class="gradient-text">Pay Back</span></h2>
+          <p>Every rupee of your ad budget is treated as an investment. Our performance marketing team builds, optimises, and scales campaigns with laser-focus on your cost-per-acquisition.</p>
+          <ul class="service-feature-list">
+            <li><span class="check-icon">✓</span>Google Search, Display & Shopping campaigns</li>
+            <li><span class="check-icon">✓</span>Meta (Facebook & Instagram) advertising</li>
+            <li><span class="check-icon">✓</span>Audience research and segmentation</li>
+            <li><span class="check-icon">✓</span>A/B testing and creative optimisation</li>
+            <li><span class="check-icon">✓</span>Real-time dashboards and weekly reports</li>
+          </ul>
+          <div class="tools-grid">
+            <span class="tool-badge">Google Ads</span>
+            <span class="tool-badge">Meta Ads Manager</span>
+            <span class="tool-badge">Google Analytics 4</span>
+            <span class="tool-badge">Data Studio</span>
+          </div>
+          <div style="margin-top:32px;">
+            <a href="contact.html" class="btn btn-primary">Launch My Campaign</a>
+          </div>
+        </div>
+        <div class="service-detail-visual reveal-right">🎯</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="reveal" style="text-align:center;">
+        <span class="section-tag">Pricing</span>
+      </div>
+      <h2 class="reveal" style="text-align:center;margin:16px 0 8px;">
+        Transparent <span class="gradient-text">Pricing Plans</span>
+      </h2>
+      <p class="reveal" style="text-align:center;max-width:500px;margin:0 auto;">
+        No hidden costs. No lock-ins. Choose a plan that fits your current growth stage — and scale when ready.
+      </p>
+
+      <div class="pricing-grid">
+        <!-- Starter -->
+        <div class="pricing-card reveal">
+          <div class="pricing-plan">Starter</div>
+          <div class="pricing-price"><sup>₹</sup><span data-target="15000" data-suffix="">15,000</span></div>
+          <div class="pricing-period">/ month — Ideal for startups</div>
+          <ul class="pricing-features">
+            <li>5-page responsive website</li>
+            <li>Basic SEO setup</li>
+            <li>Google Business Profile</li>
+            <li>Social media audit</li>
+            <li>1 monthly performance report</li>
+            <li>Email support</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;">Get Started</a>
+        </div>
+
+        <!-- Growth -->
+        <div class="pricing-card featured reveal">
+          <div class="pricing-plan">Growth</div>
+          <div class="pricing-price"><sup>₹</sup>35,000</div>
+          <div class="pricing-period">/ month — Most popular</div>
+          <ul class="pricing-features">
+            <li>10-page custom website</li>
+            <li>Full SEO + content marketing</li>
+            <li>Google Ads management</li>
+            <li>Social media management (3 platforms)</li>
+            <li>Monthly strategy calls</li>
+            <li>Priority WhatsApp support</li>
+          </ul>
+          <a href="contact.html" class="btn btn-primary" style="width:100%;justify-content:center;">Get Started</a>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="pricing-card reveal">
+          <div class="pricing-plan">Enterprise</div>
+          <div class="pricing-price">Custom</div>
+          <div class="pricing-period">Tailored for large businesses</div>
+          <ul class="pricing-features">
+            <li>Unlimited pages + e-commerce</li>
+            <li>Full-stack digital marketing</li>
+            <li>Dedicated account manager</li>
+            <li>Weekly strategy sessions</li>
+            <li>Custom analytics dashboard</li>
+            <li>24/7 priority support</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline" style="width:100%;justify-content:center;">Let's Talk</a>
+        </div>
+      </div>
+
+      <p class="reveal" style="text-align:center;margin-top:40px;font-size:0.9rem;">
+        Not sure which plan? <a href="contact.html" style="color:var(--primary-light);">Get a free consultation</a> and we'll recommend the right fit.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="cta-glow"></div>
+    <div class="cta-content reveal">
+      <span class="section-tag" style="margin:0 auto 24px;display:table;">Start Today</span>
+      <h2>Ready to <span class="gradient-text">Get Results?</span></h2>
+      <p>Book a free strategy call and let's map out your digital growth plan together.</p>
+      <div class="cta-actions">
+        <a href="contact.html" class="btn btn-primary">
+          Book Free Call
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="portfolio.html" class="btn btn-outline">See Our Work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">
+            <div class="logo-icon">⚡</div>
+            <span style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.3rem;">Maxima<span class="gradient-text">.</span></span>
+          </a>
+          <p>Pune's leading web design and digital marketing agency — turning brands into market leaders since 2016.</p>
+          <div class="footer-socials">
+            <a href="#" class="social-link">📸</a>
+            <a href="#" class="social-link">💼</a>
+            <a href="#" class="social-link">🐦</a>
+            <a href="#" class="social-link">▶️</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Services</h4>
+          <ul class="footer-links">
+            <li><a href="services.html">Web Design</a></li>
+            <li><a href="services.html">SEO & Content</a></li>
+            <li><a href="services.html">Performance Marketing</a></li>
+            <li><a href="services.html">Social Media</a></li>
+            <li><a href="services.html">E-Commerce</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Contact</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:hello@maximabusiness.in">hello@maximabusiness.in</a></li>
+            <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li style="color:var(--text-secondary);font-size:0.9rem;">Koregaon Park, Pune 411001</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Maxima Business Solutions. All rights reserved.</p>
+        <ul class="footer-bottom-links">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
