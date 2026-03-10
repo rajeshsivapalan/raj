@@ -3,19 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Maxima — Peak Performance Platform</title>
+  <title>SeekWithin — Mindfulness &amp; Meditation Platform</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --black:   #0a0a0a;
-      --white:   #ffffff;
-      --accent:  #ff4d00;
-      --accent2: #ff8c42;
-      --gray50:  #f9f9f9;
-      --gray100: #ececec;
-      --gray400: #999;
-      --gray700: #333;
+      --black:   #0b0b14;
+      --white:   #f0f0f5;
+      --accent:  #7c5bf0;
+      --accent2: #38bdf8;
+      --warm:    #c084fc;
+      --gray50:  #f4f4f8;
+      --gray100: #dcdce5;
+      --gray400: #8e8ea0;
+      --gray700: #3a3a4a;
       --radius:  12px;
       --font:    'Inter', system-ui, -apple-system, sans-serif;
     }
@@ -38,7 +39,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 20px 60px;
-      background: rgba(10,10,10,0.85);
+      background: rgba(11,11,20,0.85);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid rgba(255,255,255,0.06);
     }
@@ -78,7 +79,7 @@
     }
 
     .nav-cta:hover {
-      background: #e64400 !important;
+      background: #6a4bd8 !important;
       transform: translateY(-1px);
     }
 
@@ -99,8 +100,9 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(255,77,0,0.18) 0%, transparent 70%),
-        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(255,140,66,0.08) 0%, transparent 60%);
+        radial-gradient(ellipse 80% 60% at 50% -10%, rgba(124,91,240,0.18) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(56,189,248,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 30% at 20% 70%, rgba(192,132,252,0.06) 0%, transparent 50%);
       pointer-events: none;
     }
 
@@ -108,9 +110,9 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(255,77,0,0.12);
-      border: 1px solid rgba(255,77,0,0.3);
-      color: var(--accent2);
+      background: rgba(124,91,240,0.12);
+      border: 1px solid rgba(124,91,240,0.3);
+      color: var(--warm);
       padding: 6px 16px;
       border-radius: 100px;
       font-size: 0.8rem;
@@ -164,13 +166,13 @@
       transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
       text-decoration: none;
       display: inline-block;
-      box-shadow: 0 0 0 0 rgba(255,77,0,0.4);
+      box-shadow: 0 0 0 0 rgba(124,91,240,0.4);
     }
 
     .btn-primary:hover {
-      background: #e64400;
+      background: #6a4bd8;
       transform: translateY(-2px);
-      box-shadow: 0 8px 32px rgba(255,77,0,0.35);
+      box-shadow: 0 8px 32px rgba(124,91,240,0.35);
     }
 
     .btn-secondary {
@@ -226,7 +228,7 @@
     .marquee-track {
       display: flex;
       gap: 64px;
-      animation: marquee 22s linear infinite;
+      animation: marquee 28s linear infinite;
       width: max-content;
     }
 
@@ -300,14 +302,14 @@
     .feature-card:hover {
       transform: translateY(-4px);
       background: rgba(255,255,255,0.07);
-      border-color: rgba(255,77,0,0.25);
+      border-color: rgba(124,91,240,0.25);
     }
 
     .feature-icon {
       width: 48px;
       height: 48px;
       border-radius: 12px;
-      background: rgba(255,77,0,0.12);
+      background: rgba(124,91,240,0.12);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -353,8 +355,8 @@
       width: 40px;
       height: 40px;
       border-radius: 50%;
-      background: rgba(255,77,0,0.12);
-      border: 1px solid rgba(255,77,0,0.3);
+      background: rgba(124,91,240,0.12);
+      border: 1px solid rgba(124,91,240,0.3);
       color: var(--accent);
       font-size: 0.85rem;
       font-weight: 800;
@@ -370,72 +372,87 @@
       position: relative;
       height: 480px;
       border-radius: 20px;
-      background: linear-gradient(145deg, rgba(255,77,0,0.08) 0%, rgba(255,140,66,0.04) 100%);
-      border: 1px solid rgba(255,77,0,0.15);
+      background: linear-gradient(145deg, rgba(124,91,240,0.08) 0%, rgba(56,189,248,0.04) 100%);
+      border: 1px solid rgba(124,91,240,0.15);
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    .dashboard-mock {
-      width: 85%;
-      background: rgba(10,10,10,0.9);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 14px;
-      padding: 24px;
-    }
-
-    .mock-header {
+    /* Breathing circle animation */
+    .breath-circle-outer {
+      position: relative;
+      width: 220px;
+      height: 220px;
       display: flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 20px;
+      justify-content: center;
     }
 
-    .mock-dot { width: 10px; height: 10px; border-radius: 50%; }
-
-    .mock-title {
-      flex: 1;
-      height: 10px;
-      border-radius: 5px;
-      background: rgba(255,255,255,0.08);
-      margin-left: 8px;
+    .breath-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(124,91,240,0.25);
+      animation: breathe 6s ease-in-out infinite;
     }
 
-    .mock-bars {
-      display: flex;
-      align-items: flex-end;
-      gap: 8px;
-      height: 100px;
-      margin-bottom: 16px;
+    .breath-ring:nth-child(1) {
+      width: 100%; height: 100%;
+      animation-delay: 0s;
+    }
+    .breath-ring:nth-child(2) {
+      width: 75%; height: 75%;
+      border-color: rgba(56,189,248,0.2);
+      animation-delay: 0.6s;
+    }
+    .breath-ring:nth-child(3) {
+      width: 50%; height: 50%;
+      border-color: rgba(192,132,252,0.2);
+      animation-delay: 1.2s;
     }
 
-    .mock-bar {
-      flex: 1;
-      border-radius: 4px 4px 0 0;
-      background: rgba(255,255,255,0.06);
-      transition: height 1s ease;
+    .breath-core {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(124,91,240,0.5) 0%, rgba(56,189,248,0.2) 70%, transparent 100%);
+      animation: breathe 6s ease-in-out infinite;
+      box-shadow: 0 0 40px rgba(124,91,240,0.3);
     }
 
-    .mock-bar.active { background: linear-gradient(to top, var(--accent), var(--accent2)); }
-
-    .mock-row {
-      height: 8px;
-      border-radius: 4px;
-      background: rgba(255,255,255,0.06);
-      margin-bottom: 10px;
+    .breath-label {
+      position: absolute;
+      bottom: -40px;
+      color: var(--gray400);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
     }
 
-    .mock-row:last-child { width: 65%; }
+    @keyframes breathe {
+      0%, 100% { transform: scale(0.85); opacity: 0.6; }
+      50%      { transform: scale(1.15); opacity: 1; }
+    }
 
     .glow-orb {
       position: absolute;
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,77,0,0.15) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(124,91,240,0.15) 0%, transparent 70%);
       top: -40px; right: -40px;
+      pointer-events: none;
+    }
+
+    .glow-orb-2 {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56,189,248,0.1) 0%, transparent 70%);
+      bottom: -30px; left: -30px;
       pointer-events: none;
     }
 
@@ -532,8 +549,8 @@
     .pricing-card:hover { transform: translateY(-4px); }
 
     .pricing-card.featured {
-      background: rgba(255,77,0,0.08);
-      border-color: rgba(255,77,0,0.4);
+      background: rgba(124,91,240,0.08);
+      border-color: rgba(124,91,240,0.4);
     }
 
     .pricing-badge {
@@ -593,13 +610,13 @@
       width: 18px;
       height: 18px;
       border-radius: 50%;
-      background: rgba(255,77,0,0.15);
-      border: 1px solid rgba(255,77,0,0.35);
+      background: rgba(124,91,240,0.15);
+      border: 1px solid rgba(124,91,240,0.35);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%23ff4d00' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%237c5bf0' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-position: center;
     }
@@ -631,7 +648,7 @@
     }
 
     .plan-btn.filled:hover {
-      background: #e64400;
+      background: #6a4bd8;
       transform: translateY(-1px);
     }
 
@@ -645,8 +662,8 @@
     .cta-box {
       max-width: 780px;
       margin: 0 auto;
-      background: linear-gradient(145deg, rgba(255,77,0,0.1) 0%, rgba(255,140,66,0.05) 100%);
-      border: 1px solid rgba(255,77,0,0.2);
+      background: linear-gradient(145deg, rgba(124,91,240,0.1) 0%, rgba(56,189,248,0.05) 100%);
+      border: 1px solid rgba(124,91,240,0.2);
       border-radius: 24px;
       padding: 72px 48px;
       position: relative;
@@ -661,7 +678,7 @@
       width: 300px;
       height: 300px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255,77,0,0.12) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(124,91,240,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -803,44 +820,45 @@
 
   <!-- NAV -->
   <nav>
-    <div class="logo">Maxima</div>
+    <div class="logo">SeekWithin</div>
     <ul class="nav-links">
-      <li><a href="#features">Features</a></li>
+      <li><a href="#features">Practices</a></li>
       <li><a href="#how">How it works</a></li>
-      <li><a href="#testimonials">Reviews</a></li>
-      <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#cta" class="nav-cta">Get started</a></li>
+      <li><a href="#testimonials">Stories</a></li>
+      <li><a href="#pricing">Plans</a></li>
+      <li><a href="#cta" class="nav-cta">Begin your journey</a></li>
     </ul>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg"></div>
-    <div class="hero-badge"><span></span> Now in public beta</div>
-    <h1>Unlock your<br/><span class="highlight">peak potential</span></h1>
+    <div class="hero-badge"><span></span> Your mind deserves this</div>
+    <h1>Find stillness in<br/><span class="highlight">a noisy world</span></h1>
     <p class="hero-sub">
-      Maxima brings together AI-powered insights, real-time analytics, and
-      seamless workflows so your team can operate at its absolute best.
+      SeekWithin blends guided meditations, breathwork, and personalized
+      mindfulness journeys to help you reduce stress, sleep better, and
+      discover lasting inner peace.
     </p>
     <div class="hero-actions">
-      <a href="#cta" class="btn-primary">Start for free</a>
+      <a href="#cta" class="btn-primary">Start meditating free</a>
       <a href="#how" class="btn-secondary">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8" fill="currentColor" stroke="none"/></svg>
-        Watch demo
+        Watch a session
       </a>
     </div>
     <div class="hero-stats">
       <div class="stat">
-        <div class="stat-number">50K+</div>
-        <div class="stat-label">Active teams</div>
+        <div class="stat-number">2M+</div>
+        <div class="stat-label">Mindful minutes logged</div>
       </div>
       <div class="stat">
-        <div class="stat-number">3.2×</div>
-        <div class="stat-label">Average productivity lift</div>
+        <div class="stat-number">87%</div>
+        <div class="stat-label">Report less stress</div>
       </div>
       <div class="stat">
-        <div class="stat-number">99.9%</div>
-        <div class="stat-label">Uptime SLA</div>
+        <div class="stat-number">4.9</div>
+        <div class="stat-label">App Store rating</div>
       </div>
     </div>
   </section>
@@ -848,63 +866,63 @@
   <!-- MARQUEE -->
   <div class="marquee-wrapper">
     <div class="marquee-track">
-      <span>Real-time insights</span><span class="dot">·</span>
-      <span>AI analytics</span><span class="dot">·</span>
-      <span>Workflow automation</span><span class="dot">·</span>
-      <span>Team collaboration</span><span class="dot">·</span>
-      <span>Performance tracking</span><span class="dot">·</span>
-      <span>Custom dashboards</span><span class="dot">·</span>
-      <span>Enterprise security</span><span class="dot">·</span>
-      <span>API-first</span><span class="dot">·</span>
-      <span>Real-time insights</span><span class="dot">·</span>
-      <span>AI analytics</span><span class="dot">·</span>
-      <span>Workflow automation</span><span class="dot">·</span>
-      <span>Team collaboration</span><span class="dot">·</span>
-      <span>Performance tracking</span><span class="dot">·</span>
-      <span>Custom dashboards</span><span class="dot">·</span>
-      <span>Enterprise security</span><span class="dot">·</span>
-      <span>API-first</span><span class="dot">·</span>
+      <span>Guided meditation</span><span class="dot">&#183;</span>
+      <span>Breathwork</span><span class="dot">&#183;</span>
+      <span>Sleep stories</span><span class="dot">&#183;</span>
+      <span>Body scans</span><span class="dot">&#183;</span>
+      <span>Mindful movement</span><span class="dot">&#183;</span>
+      <span>Journaling prompts</span><span class="dot">&#183;</span>
+      <span>Focus music</span><span class="dot">&#183;</span>
+      <span>Daily check-ins</span><span class="dot">&#183;</span>
+      <span>Guided meditation</span><span class="dot">&#183;</span>
+      <span>Breathwork</span><span class="dot">&#183;</span>
+      <span>Sleep stories</span><span class="dot">&#183;</span>
+      <span>Body scans</span><span class="dot">&#183;</span>
+      <span>Mindful movement</span><span class="dot">&#183;</span>
+      <span>Journaling prompts</span><span class="dot">&#183;</span>
+      <span>Focus music</span><span class="dot">&#183;</span>
+      <span>Daily check-ins</span><span class="dot">&#183;</span>
     </div>
   </div>
 
   <!-- FEATURES -->
   <section id="features">
     <div style="text-align:center; margin-bottom: 8px;">
-      <span class="section-label">Features</span>
+      <span class="section-label">Practices</span>
     </div>
-    <h2 class="section-title" style="text-align:center; margin: 0 auto 12px;">Everything you need to perform at your best</h2>
-    <p class="section-sub" style="text-align:center; margin: 0 auto;">Built for modern teams who refuse to settle for average.</p>
+    <h2 class="section-title" style="text-align:center; margin: 0 auto 12px;">Tools for every layer of your well-being</h2>
+    <p class="section-sub" style="text-align:center; margin: 0 auto;">Whether you're starting out or deepening an existing practice, SeekWithin meets you where you are.</p>
 
     <div class="features-grid">
       <div class="feature-card fade-up">
-        <div class="feature-icon">⚡</div>
-        <h3>Instant Insights</h3>
-        <p>Surface meaningful patterns across all your data sources in real time. No data science degree required.</p>
+        <div class="feature-icon">&#x1F9D8;</div>
+        <h3>Guided Meditations</h3>
+        <p>Hundreds of sessions led by world-class teachers, from 3-minute resets to 60-minute deep dives.</p>
       </div>
       <div class="feature-card fade-up">
-        <div class="feature-icon">🤖</div>
-        <h3>AI Co-pilot</h3>
-        <p>Let Maxima's AI layer surface bottlenecks, recommend actions, and draft plans — so you focus on execution.</p>
+        <div class="feature-icon">&#x1F32C;</div>
+        <h3>Breathwork</h3>
+        <p>Structured breathing exercises to calm your nervous system, boost energy, or prepare for sleep.</p>
       </div>
       <div class="feature-card fade-up">
-        <div class="feature-icon">🔗</div>
-        <h3>100+ Integrations</h3>
-        <p>Connect Slack, Jira, GitHub, Salesforce, and more in under two minutes. Your stack, amplified.</p>
+        <div class="feature-icon">&#x1F319;</div>
+        <h3>Sleep Stories</h3>
+        <p>Soothing narratives and ambient soundscapes designed to guide you gently into restful, restorative sleep.</p>
       </div>
       <div class="feature-card fade-up">
-        <div class="feature-icon">📊</div>
-        <h3>Custom Dashboards</h3>
-        <p>Drag, drop, and publish the dashboards your team actually wants to look at every single day.</p>
+        <div class="feature-icon">&#x1F4DD;</div>
+        <h3>Mindful Journaling</h3>
+        <p>Daily prompts that encourage self-reflection, gratitude, and emotional clarity in just a few minutes.</p>
       </div>
       <div class="feature-card fade-up">
-        <div class="feature-icon">🔒</div>
-        <h3>Enterprise Security</h3>
-        <p>SOC 2 Type II, SSO, role-based access, and end-to-end encryption. Security without compromise.</p>
+        <div class="feature-icon">&#x1F3B6;</div>
+        <h3>Focus Soundscapes</h3>
+        <p>Curated ambient music and nature sounds to help you enter flow state and stay there longer.</p>
       </div>
       <div class="feature-card fade-up">
-        <div class="feature-icon">🚀</div>
-        <h3>Automation Engine</h3>
-        <p>Trigger multi-step workflows from any event. Ship faster by eliminating manual, repetitive tasks.</p>
+        <div class="feature-icon">&#x1F4CA;</div>
+        <h3>Progress Tracking</h3>
+        <p>Visualize your streaks, moods, and session history. Celebrate growth with gentle, encouraging insights.</p>
       </div>
     </div>
   </section>
@@ -914,53 +932,41 @@
     <div class="how-inner">
       <div>
         <span class="section-label">How it works</span>
-        <h2 class="section-title">Up and running in three steps</h2>
-        <p class="section-sub">No complex setup, no long onboarding. Connect, configure, and go — in the time it takes to finish a coffee.</p>
+        <h2 class="section-title">Your journey begins in three breaths</h2>
+        <p class="section-sub">No experience needed. No judgment. Just you, a quiet moment, and a gentle guide.</p>
         <div class="steps">
           <div class="step fade-up">
             <div class="step-num">01</div>
             <div class="step-body">
-              <h4>Connect your tools</h4>
-              <p>Authorize your existing apps with a single click. Maxima pulls in your data securely and keeps it in sync.</p>
+              <h4>Share how you feel</h4>
+              <p>A quick daily check-in helps SeekWithin understand your current state and recommend the perfect session for right now.</p>
             </div>
           </div>
           <div class="step fade-up">
             <div class="step-num">02</div>
             <div class="step-body">
-              <h4>Define your goals</h4>
-              <p>Set the KPIs and milestones that matter to your team. Maxima tracks them automatically and alerts you to drift.</p>
+              <h4>Follow a guided session</h4>
+              <p>Choose from meditations, breathwork, body scans, or sleep stories. Sessions adapt to your time and experience level.</p>
             </div>
           </div>
           <div class="step fade-up">
             <div class="step-num">03</div>
             <div class="step-body">
-              <h4>Act on AI-driven recommendations</h4>
-              <p>Review daily insights, automate follow-ups, and watch your team hit record numbers — week after week.</p>
+              <h4>Grow your practice</h4>
+              <p>Track your streaks, unlock new content, and watch your sense of calm deepen week after week.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="how-visual">
         <div class="glow-orb"></div>
-        <div class="dashboard-mock">
-          <div class="mock-header">
-            <div class="mock-dot" style="background:#ff4d00;"></div>
-            <div class="mock-dot" style="background:#ffb347;"></div>
-            <div class="mock-dot" style="background:#4caf50;"></div>
-            <div class="mock-title"></div>
-          </div>
-          <div class="mock-bars">
-            <div class="mock-bar" style="height:45%;"></div>
-            <div class="mock-bar active" style="height:70%;"></div>
-            <div class="mock-bar" style="height:55%;"></div>
-            <div class="mock-bar active" style="height:90%;"></div>
-            <div class="mock-bar" style="height:60%;"></div>
-            <div class="mock-bar active" style="height:80%;"></div>
-            <div class="mock-bar" style="height:50%;"></div>
-          </div>
-          <div class="mock-row"></div>
-          <div class="mock-row"></div>
-          <div class="mock-row"></div>
+        <div class="glow-orb-2"></div>
+        <div class="breath-circle-outer">
+          <div class="breath-ring"></div>
+          <div class="breath-ring"></div>
+          <div class="breath-ring"></div>
+          <div class="breath-core"></div>
+          <div class="breath-label">Breathe</div>
         </div>
       </div>
     </div>
@@ -969,41 +975,41 @@
   <!-- TESTIMONIALS -->
   <section id="testimonials">
     <div class="testimonials-header fade-up">
-      <span class="section-label">Testimonials</span>
-      <h2 class="section-title">Trusted by teams pushing the limit</h2>
-      <p class="section-sub" style="margin: 12px auto 0;">Real results from real teams who made the switch to Maxima.</p>
+      <span class="section-label">Stories</span>
+      <h2 class="section-title">Real people, real transformation</h2>
+      <p class="section-sub" style="margin: 12px auto 0;">Hear from members who found clarity, calm, and a deeper connection to themselves.</p>
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card fade-up">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Maxima turned our raw data into clear actions. Our sprint velocity jumped 40% in the first month."</blockquote>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"I never thought I could meditate. SeekWithin's 5-minute sessions proved me wrong. Three months in, my anxiety has halved."</blockquote>
         <div class="testimonial-author">
-          <div class="avatar" style="background: linear-gradient(135deg,#ff4d00,#ff8c42);">AS</div>
+          <div class="avatar" style="background: linear-gradient(135deg,#7c5bf0,#38bdf8);">EM</div>
           <div>
-            <div class="author-name">Anya Sharma</div>
-            <div class="author-role">VP Engineering, Vertex Labs</div>
+            <div class="author-name">Elena Martinez</div>
+            <div class="author-role">Teacher, Portland</div>
           </div>
         </div>
       </div>
       <div class="testimonial-card fade-up">
-        <div class="stars">★★★★★</div>
-        <blockquote>"The AI recommendations are eerily accurate. It flagged a churn risk two weeks before our sales team noticed it."</blockquote>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"The sleep stories changed everything. I went from lying awake for hours to drifting off in under ten minutes."</blockquote>
         <div class="testimonial-author">
-          <div class="avatar" style="background: linear-gradient(135deg,#6c63ff,#a78bfa);">MJ</div>
+          <div class="avatar" style="background: linear-gradient(135deg,#c084fc,#f0abfc);">DK</div>
           <div>
-            <div class="author-name">Marcus Johnson</div>
-            <div class="author-role">Head of Growth, Luminary</div>
+            <div class="author-name">David Kim</div>
+            <div class="author-role">Software Engineer, Austin</div>
           </div>
         </div>
       </div>
       <div class="testimonial-card fade-up">
-        <div class="stars">★★★★★</div>
-        <blockquote>"Setup took 20 minutes. We had our first meaningful dashboard live before lunch. Insane time-to-value."</blockquote>
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <blockquote>"The daily check-ins and journaling prompts made mindfulness a habit, not a chore. I feel more present with my kids now."</blockquote>
         <div class="testimonial-author">
-          <div class="avatar" style="background: linear-gradient(135deg,#00b4d8,#48cae4);">PL</div>
+          <div class="avatar" style="background: linear-gradient(135deg,#38bdf8,#67e8f9);">RO</div>
           <div>
-            <div class="author-name">Priya Lin</div>
-            <div class="author-role">CTO, Driftwave</div>
+            <div class="author-name">Rachel Osei</div>
+            <div class="author-role">Product Manager, London</div>
           </div>
         </div>
       </div>
@@ -1012,48 +1018,48 @@
 
   <!-- PRICING -->
   <section id="pricing">
-    <span class="section-label">Pricing</span>
-    <h2 class="section-title">Simple, transparent pricing</h2>
-    <p class="section-sub">Start free, scale as you grow. No hidden fees, ever.</p>
+    <span class="section-label">Plans</span>
+    <h2 class="section-title">Invest in your inner peace</h2>
+    <p class="section-sub">Start free, go deeper when you're ready. Cancel anytime.</p>
     <div class="pricing-grid">
       <div class="pricing-card fade-up">
-        <div class="plan-name">Starter</div>
+        <div class="plan-name">Free</div>
         <div class="plan-price"><sup>$</sup>0</div>
         <div class="plan-period">Free forever</div>
         <ul class="plan-features">
-          <li>Up to 5 users</li>
-          <li>3 integrations</li>
-          <li>Basic dashboards</li>
-          <li>7-day data history</li>
+          <li>10 guided meditations</li>
+          <li>Daily breathing exercise</li>
+          <li>Mood check-ins</li>
+          <li>7-day streak tracking</li>
         </ul>
-        <button class="plan-btn outline">Get started free</button>
+        <button class="plan-btn outline">Start for free</button>
       </div>
       <div class="pricing-card featured fade-up">
-        <div class="pricing-badge">Most popular</div>
-        <div class="plan-name">Pro</div>
-        <div class="plan-price"><sup>$</sup>49</div>
-        <div class="plan-period">per seat / month</div>
+        <div class="pricing-badge">Most loved</div>
+        <div class="plan-name">Premium</div>
+        <div class="plan-price"><sup>$</sup>12</div>
+        <div class="plan-period">per month</div>
         <ul class="plan-features">
-          <li>Unlimited users</li>
-          <li>100+ integrations</li>
-          <li>AI co-pilot</li>
-          <li>1-year data history</li>
-          <li>Automation engine</li>
+          <li>Full meditation library</li>
+          <li>Sleep stories &amp; soundscapes</li>
+          <li>Advanced breathwork courses</li>
+          <li>Personalized recommendations</li>
+          <li>Offline downloads</li>
         </ul>
-        <button class="plan-btn filled">Start 14-day trial</button>
+        <button class="plan-btn filled">Start 7-day free trial</button>
       </div>
       <div class="pricing-card fade-up">
-        <div class="plan-name">Enterprise</div>
-        <div class="plan-price" style="font-size:2.2rem;">Custom</div>
-        <div class="plan-period">Volume pricing</div>
+        <div class="plan-name">Family</div>
+        <div class="plan-price"><sup>$</sup>20</div>
+        <div class="plan-period">per month, up to 6 members</div>
         <ul class="plan-features">
-          <li>Everything in Pro</li>
-          <li>SSO &amp; SCIM</li>
-          <li>Dedicated support</li>
-          <li>SLA guarantee</li>
-          <li>Custom contracts</li>
+          <li>Everything in Premium</li>
+          <li>6 individual profiles</li>
+          <li>Kids &amp; teens content</li>
+          <li>Family challenges</li>
+          <li>Shared streak board</li>
         </ul>
-        <button class="plan-btn outline">Talk to sales</button>
+        <button class="plan-btn outline">Start family trial</button>
       </div>
     </div>
   </section>
@@ -1061,11 +1067,11 @@
   <!-- CTA BANNER -->
   <section id="cta">
     <div class="cta-box fade-up">
-      <h2>Ready to hit your <span style="background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">maximum?</span></h2>
-      <p>Join 50,000+ teams already using Maxima to outperform. No credit card required to start.</p>
+      <h2>Ready to <span style="background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">seek within?</span></h2>
+      <p>Join two million people who chose calm over chaos. Your first session is free, no credit card needed.</p>
       <form class="cta-form" onsubmit="return false;">
-        <input type="email" placeholder="Enter your work email" />
-        <button type="submit" class="btn-primary" style="white-space:nowrap;">Get early access</button>
+        <input type="email" placeholder="Enter your email" />
+        <button type="submit" class="btn-primary" style="white-space:nowrap;">Begin your journey</button>
       </form>
     </div>
   </section>
@@ -1074,17 +1080,17 @@
   <footer>
     <div class="footer-inner">
       <div class="footer-brand">
-        <div class="logo">Maxima</div>
-        <p>Peak performance platform for modern, ambitious teams.</p>
+        <div class="logo">SeekWithin</div>
+        <p>Mindfulness and meditation for a calmer, more connected life.</p>
       </div>
       <div class="footer-links">
         <div class="footer-col">
-          <h5>Product</h5>
+          <h5>Practice</h5>
           <ul>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Integrations</a></li>
-            <li><a href="#">Pricing</a></li>
-            <li><a href="#">Changelog</a></li>
+            <li><a href="#">Meditations</a></li>
+            <li><a href="#">Breathwork</a></li>
+            <li><a href="#">Sleep</a></li>
+            <li><a href="#">Music</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -1092,8 +1098,8 @@
           <ul>
             <li><a href="#">About</a></li>
             <li><a href="#">Blog</a></li>
+            <li><a href="#">Teachers</a></li>
             <li><a href="#">Careers</a></li>
-            <li><a href="#">Press</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -1101,17 +1107,17 @@
           <ul>
             <li><a href="#">Privacy</a></li>
             <li><a href="#">Terms</a></li>
-            <li><a href="#">Security</a></li>
+            <li><a href="#">Accessibility</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Maxima, Inc. All rights reserved.</p>
+      <p>&copy; 2026 SeekWithin, Inc. All rights reserved.</p>
       <div class="social-links">
+        <a href="#">Instagram</a>
         <a href="#">Twitter</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">GitHub</a>
+        <a href="#">YouTube</a>
       </div>
     </div>
   </footer>
@@ -1137,7 +1143,7 @@
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           navLinks.forEach(link => {
-            link.style.color = link.getAttribute('href') === '#' + entry.target.id ? '#ffffff' : '';
+            link.style.color = link.getAttribute('href') === '#' + entry.target.id ? '#f0f0f5' : '';
           });
         }
       });
