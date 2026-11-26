@@ -35,14 +35,23 @@ npm test                                              # uses an in-memory MongoD
 TEST_MONGO_URI=mongodb://localhost:27017/btpl_test npm test   # or a real one
 ```
 
-## Deploy (single service)
+## Deploy to Render (one click)
+
+1. MongoDB Atlas: create a free M0 cluster, a database user, and allow network access from `0.0.0.0/0`. Copy the connection string (add `/btpl_pm` before the `?`).
+2. Open https://render.com/deploy?repo=https://github.com/rajeshsivapalan/raj and connect GitHub if asked.
+3. Fill in `MONGO_URI`, `ADMIN_EMAIL` and `ADMIN_PASSWORD`, then click **Apply**. `JWT_SECRET` is generated for you.
+4. When the build finishes, open the service URL and sign in with the admin email and password you entered.
+
+The first admin is created only on an empty database. Do not run `npm run seed` against production.
+
+## Deploy (any Node host)
 
 `npm run build` puts the React app in `client/dist`; the Express server serves it alongside `/api`, so one Node service is enough (Render, Railway, an EC2/VM with PM2, etc.).
 
 ```
 build:  npm run install:all && npm run build
 start:  npm start
-env:    MONGO_URI, JWT_SECRET, APP_TZ (default Asia/Kolkata), LOG_EDIT_WINDOW_DAYS (default 7)
+env:    MONGO_URI, JWT_SECRET, ADMIN_EMAIL, ADMIN_PASSWORD (first run), APP_TZ (default Asia/Kolkata), LOG_EDIT_WINDOW_DAYS (default 7)
 ```
 
 ## Structure
