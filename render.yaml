@@ -1,0 +1,29 @@
+# Render Blueprint for the BTPL Work Tracker (pm-tool/).
+# Deploy: https://render.com/deploy?repo=https://github.com/rajeshsivapalan/raj
+services:
+  - type: web
+    name: btpl-work-tracker
+    runtime: node
+    plan: free
+    region: singapore
+    rootDir: pm-tool
+    buildCommand: npm run install:all && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: MONGO_URI
+        sync: false        # paste your MongoDB Atlas connection string in the Render form
+      - key: JWT_SECRET
+        generateValue: true
+      - key: APP_TZ
+        value: Asia/Kolkata
+      - key: LOG_EDIT_WINDOW_DAYS
+        value: "7"
+      - key: ADMIN_EMAIL
+        sync: false        # your login email for the first admin
+      - key: ADMIN_PASSWORD
+        sync: false        # your login password (min 8 characters)
+      - key: ADMIN_NAME
+        value: Rajesh
